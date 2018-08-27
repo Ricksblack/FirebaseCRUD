@@ -14,6 +14,8 @@
 		3C67008A2133118B00129098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6700882133118B00129098 /* LaunchScreen.storyboard */; };
 		3C6700922133169600129098 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6700912133169600129098 /* GoogleService-Info.plist */; };
 		3C67009421331E4800129098 /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C67009321331E4800129098 /* InicioViewController.swift */; };
+		3C6700962133904000129098 /* VistaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6700952133904000129098 /* VistaViewController.swift */; };
+		3C6700982133950A00129098 /* Juegos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6700972133950A00129098 /* Juegos.swift */; };
 		C61AE39B3ED64A2B6F5DFD81 /* Pods_FirebaseCrud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB0F70A05EAE6FA6E6FEC93 /* Pods_FirebaseCrud.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		3C67008B2133118B00129098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C6700912133169600129098 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C67009321331E4800129098 /* InicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
+		3C6700952133904000129098 /* VistaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaViewController.swift; sourceTree = "<group>"; };
+		3C6700972133950A00129098 /* Juegos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juegos.swift; sourceTree = "<group>"; };
 		5A165E6CF0B7F20D7F2A7FDC /* Pods-FirebaseCrud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseCrud.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseCrud/Pods-FirebaseCrud.release.xcconfig"; sourceTree = "<group>"; };
 		AF3C36D30B4F8C6B8D89549B /* Pods-FirebaseCrud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseCrud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseCrud/Pods-FirebaseCrud.debug.xcconfig"; sourceTree = "<group>"; };
 		BFB0F70A05EAE6FA6E6FEC93 /* Pods_FirebaseCrud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseCrud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,11 +72,13 @@
 				3C67007F2133118B00129098 /* AppDelegate.swift */,
 				3C6700812133118B00129098 /* ViewController.swift */,
 				3C67009321331E4800129098 /* InicioViewController.swift */,
+				3C6700952133904000129098 /* VistaViewController.swift */,
 				3C6700832133118B00129098 /* Main.storyboard */,
 				3C6700862133118B00129098 /* Assets.xcassets */,
 				3C6700882133118B00129098 /* LaunchScreen.storyboard */,
 				3C6700912133169600129098 /* GoogleService-Info.plist */,
 				3C67008B2133118B00129098 /* Info.plist */,
+				3C6700972133950A00129098 /* Juegos.swift */,
 			);
 			path = FirebaseCrud;
 			sourceTree = "<group>";
@@ -232,7 +238,9 @@
 			files = (
 				3C6700822133118B00129098 /* ViewController.swift in Sources */,
 				3C67009421331E4800129098 /* InicioViewController.swift in Sources */,
+				3C6700962133904000129098 /* VistaViewController.swift in Sources */,
 				3C6700802133118B00129098 /* AppDelegate.swift in Sources */,
+				3C6700982133950A00129098 /* Juegos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
