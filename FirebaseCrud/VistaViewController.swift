@@ -12,6 +12,7 @@ import FirebaseDatabase
 class VistaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tabla: UITableView!
+    @IBOutlet weak var control: UISegmentedControl!
     var listaJuegos = [Juegos]()
     var ref: DatabaseReference!
     var handle: DatabaseHandle!
@@ -22,23 +23,25 @@ class VistaViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tabla.dataSource = self
         
         ref = Database.database().reference()
-        handle = ref.child("PS4").observe(DataEventType.value, with: { (snapshot) in
-            self.listaJuegos.removeAll()
-            for item in snapshot.children.allObjects as! [DataSnapshot] {
-                let valores = item.value as? [String: AnyObject]
-                let nombre = valores!["nombre"] as? String
-                let genero = valores!["genero"] as? String
-                
-                let juego = Juegos(nombre: nombre, genero: genero)
-                self.listaJuegos.append(juego)
-            }
-            self.tabla.reloadData()
-        })
+        plataformas(plat: "PS4")
     }
 
     @IBAction func atras(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func controlButton(_ sender: UISegmentedControl) {
+        if control.selectedSegmentIndex == 0 {
+            plataformas(plat: "PS4")
+        } else if control.selectedSegmentIndex == 1 {
+            plataformas(plat: "Xbox One")
+        } else if control.selectedSegmentIndex == 2 {
+            plataformas(plat: "Nintendo")
+        } else {
+            plataformas(plat: "PC")
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaJuegos.count
@@ -52,4 +55,21 @@ class VistaViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
+    
+    private func plataformas(plat: String) {
+        handle = ref.child(plat).observe(DataEventType.value, with: { (snapshot) in
+            self.listaJuegos.removeAll()
+            for item in snapshot.children.allObjects as! [DataSnapshot] {
+                let valores = item.value as? [String: AnyObject]
+                let nombre = valores!["nombre"] as? String
+                let genero = valores!["genero"] as? String
+                
+                let juego = Juegos(nombre: nombre, genero: genero)
+                self.listaJuegos.append(juego)
+            }
+            self.tabla.reloadData()
+        })
+    }
+    
+    
 }

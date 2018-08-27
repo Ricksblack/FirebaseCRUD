@@ -181,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zVI-gi-TwG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="T9y-GW-4ae" detailTextLabel="5Pz-fG-kCX" style="IBUITableViewCellStyleSubtitle" id="y8N-8H-nbO">
@@ -224,20 +224,38 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PiO-jb-Pyp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="PS4"/>
+                                    <segment title="XBOX ONE"/>
+                                    <segment title="SWITCH"/>
+                                    <segment title="PC"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="controlButton:" destination="9DP-Dp-buB" eventType="valueChanged" id="jNb-7n-ise"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PiO-jb-Pyp" firstAttribute="trailing" secondItem="eUv-3C-fZM" secondAttribute="trailing" id="07L-kt-Dkr"/>
                             <constraint firstItem="eUv-3C-fZM" firstAttribute="top" secondItem="tNg-n9-cIh" secondAttribute="top" id="0g8-77-0hg"/>
-                            <constraint firstItem="zVI-gi-TwG" firstAttribute="top" secondItem="eUv-3C-fZM" secondAttribute="bottom" id="7Wx-0V-kN6"/>
-                            <constraint firstItem="zVI-gi-TwG" firstAttribute="bottom" secondItem="tNg-n9-cIh" secondAttribute="bottom" id="HIB-AF-HyU"/>
-                            <constraint firstItem="zVI-gi-TwG" firstAttribute="trailing" secondItem="tNg-n9-cIh" secondAttribute="trailing" id="IQB-fP-rJJ"/>
+                            <constraint firstItem="zVI-gi-TwG" firstAttribute="bottom" secondItem="tNg-n9-cIh" secondAttribute="bottom" id="Cpx-94-n5Q"/>
+                            <constraint firstItem="zVI-gi-TwG" firstAttribute="top" secondItem="PiO-jb-Pyp" secondAttribute="bottom" constant="8" symbolic="YES" id="GOJ-x7-7Xt"/>
                             <constraint firstItem="eUv-3C-fZM" firstAttribute="trailing" secondItem="tNg-n9-cIh" secondAttribute="trailing" id="O8e-KH-haN"/>
                             <constraint firstItem="eUv-3C-fZM" firstAttribute="leading" secondItem="tNg-n9-cIh" secondAttribute="leading" id="Tx1-9F-mJU"/>
-                            <constraint firstItem="zVI-gi-TwG" firstAttribute="leading" secondItem="tNg-n9-cIh" secondAttribute="leading" id="giN-M0-rcU"/>
+                            <constraint firstItem="PiO-jb-Pyp" firstAttribute="top" secondItem="eUv-3C-fZM" secondAttribute="bottom" id="Uka-g9-4ct"/>
+                            <constraint firstItem="PiO-jb-Pyp" firstAttribute="leading" secondItem="zVI-gi-TwG" secondAttribute="leading" id="dwa-3D-8PW"/>
+                            <constraint firstItem="PiO-jb-Pyp" firstAttribute="leading" secondItem="eUv-3C-fZM" secondAttribute="leading" id="nu4-jc-CJ3"/>
+                            <constraint firstItem="PiO-jb-Pyp" firstAttribute="trailing" secondItem="zVI-gi-TwG" secondAttribute="trailing" id="t5k-im-LBM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tNg-n9-cIh"/>
                     </view>
                     <connections>
+                        <outlet property="control" destination="PiO-jb-Pyp" id="fhS-4y-pyU"/>
                         <outlet property="tabla" destination="zVI-gi-TwG" id="bd4-SD-1X0"/>
                     </connections>
                 </viewController>
