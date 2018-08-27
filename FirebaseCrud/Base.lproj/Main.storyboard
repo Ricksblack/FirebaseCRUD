@@ -140,6 +140,9 @@
                                     <navigationItem title="Guardar juegos" id="0bW-Vw-xa4">
                                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="vF6-It-Zig">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="9DP-Dp-buB" kind="show" id="3Wd-CF-PpK"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -193,8 +196,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zVI-gi-TwG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="T9y-GW-4ae" detailTextLabel="5Pz-fG-kCX" style="IBUITableViewCellStyleSubtitle" id="y8N-8H-nbO">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y8N-8H-nbO" id="8fs-fa-uRm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T9y-GW-4ae">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Pz-fG-kCX">
+                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUv-3C-fZM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Mostrar Juegos" id="gog-9R-m84">
@@ -207,31 +240,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zVI-gi-TwG">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="y8N-8H-nbO">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y8N-8H-nbO" id="8fs-fa-uRm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eUv-3C-fZM" firstAttribute="top" secondItem="ecv-FL-Wbo" secondAttribute="top" id="6gv-WQ-oa4"/>
-                            <constraint firstItem="zVI-gi-TwG" firstAttribute="trailing" secondItem="tNg-n9-cIh" secondAttribute="trailing" id="AnS-vO-Nss"/>
-                            <constraint firstItem="eUv-3C-fZM" firstAttribute="trailing" secondItem="tNg-n9-cIh" secondAttribute="trailing" id="ENE-Qr-rl7"/>
-                            <constraint firstItem="zVI-gi-TwG" firstAttribute="top" secondItem="eUv-3C-fZM" secondAttribute="bottom" id="EYu-gE-Jto"/>
-                            <constraint firstItem="eUv-3C-fZM" firstAttribute="leading" secondItem="tNg-n9-cIh" secondAttribute="leading" id="HTV-0u-3dt"/>
-                            <constraint firstItem="zVI-gi-TwG" firstAttribute="leading" secondItem="tNg-n9-cIh" secondAttribute="leading" id="RRF-qs-B1M"/>
-                            <constraint firstItem="zVI-gi-TwG" firstAttribute="bottom" secondItem="tNg-n9-cIh" secondAttribute="bottom" id="UQw-21-zHt"/>
-                            <constraint firstItem="tNg-n9-cIh" firstAttribute="bottom" secondItem="eUv-3C-fZM" secondAttribute="bottom" constant="623" id="yRY-ph-QV4"/>
+                            <constraint firstItem="eUv-3C-fZM" firstAttribute="top" secondItem="tNg-n9-cIh" secondAttribute="top" id="0g8-77-0hg"/>
+                            <constraint firstItem="zVI-gi-TwG" firstAttribute="top" secondItem="eUv-3C-fZM" secondAttribute="bottom" id="7Wx-0V-kN6"/>
+                            <constraint firstItem="zVI-gi-TwG" firstAttribute="bottom" secondItem="tNg-n9-cIh" secondAttribute="bottom" id="HIB-AF-HyU"/>
+                            <constraint firstItem="zVI-gi-TwG" firstAttribute="trailing" secondItem="tNg-n9-cIh" secondAttribute="trailing" id="IQB-fP-rJJ"/>
+                            <constraint firstItem="eUv-3C-fZM" firstAttribute="trailing" secondItem="tNg-n9-cIh" secondAttribute="trailing" id="O8e-KH-haN"/>
+                            <constraint firstItem="eUv-3C-fZM" firstAttribute="leading" secondItem="tNg-n9-cIh" secondAttribute="leading" id="Tx1-9F-mJU"/>
+                            <constraint firstItem="zVI-gi-TwG" firstAttribute="leading" secondItem="tNg-n9-cIh" secondAttribute="leading" id="giN-M0-rcU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tNg-n9-cIh"/>
                     </view>

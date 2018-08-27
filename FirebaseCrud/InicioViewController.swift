@@ -68,6 +68,5 @@ class InicioViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func limpiar() {
         nombreJuego.text = ""
         generoJuego.text = ""
-        
     }
 }
